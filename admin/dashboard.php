@@ -1,6 +1,6 @@
 <?php
-include '../includes/db.php';
-include '../includes/auth.php';
+require_once __DIR__ . '/../includes/db.php';
+require_once __DIR__ . '/../includes/auth.php';
 require_admin();
 $pageTitle = 'Admin Dashboard';
 include '../includes/header.php';

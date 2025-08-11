@@ -27,10 +27,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error = 'Username and password are required.';
     } elseif ($password !== $confirm) {
         $error = 'Passwords do not match.';
-    } elseif (strlen($username) < 3) {
-        $error = 'Username must be at least 3 characters long.';
-    } elseif (strlen($password) < 6) {
-        $error = 'Password must be at least 6 characters long.';
+    } elseif (strlen($username) < USERNAME_MIN_LENGTH) {
+        $error = 'Username must be at least ' . USERNAME_MIN_LENGTH . ' characters long.';
+    } elseif (strlen($password) < PASSWORD_MIN_LENGTH) {
+        $error = 'Password must be at least ' . PASSWORD_MIN_LENGTH . ' characters long.';
     } else {
         // Check if username already exists
         $stmt = $conn->prepare('SELECT id FROM admins WHERE username = ? LIMIT 1');
@@ -97,15 +97,15 @@ include '../includes/header.php';
                                 <label for="username" class="form-label">Username</label>
                                 <input type="text" class="form-control" id="username" name="username" 
                                        value="<?php echo htmlspecialchars($_POST['username'] ?? ''); ?>" 
-                                       required minlength="3">
-                                <div class="form-text">Username must be at least 3 characters long.</div>
+                                       required minlength="<?php echo USERNAME_MIN_LENGTH; ?>">
+                                <div class="form-text">Username must be at least <?php echo USERNAME_MIN_LENGTH; ?> characters long.</div>
                             </div>
                             
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>
                                 <input type="password" class="form-control" id="password" name="password" 
-                                       required minlength="6">
-                                <div class="form-text">Password must be at least 6 characters long.</div>
+                                       required minlength="<?php echo PASSWORD_MIN_LENGTH; ?>">
+                                <div class="form-text">Password must be at least <?php echo PASSWORD_MIN_LENGTH; ?> characters long.</div>
                             </div>
                             
                             <div class="mb-3">

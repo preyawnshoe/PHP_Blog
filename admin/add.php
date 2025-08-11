@@ -1,6 +1,6 @@
-<?php include '../includes/db.php'; ?>
-<?php include '../includes/auth.php'; require_admin(); ?>
-<?php $pageTitle = 'Add Post'; include '../includes/header.php'; ?>
+<?php require_once __DIR__ . '/../includes/db.php'; ?>
+<?php require_once __DIR__ . '/../includes/auth.php'; require_admin(); ?>
+<?php $pageTitle = 'Add Post'; include __DIR__ . '/../includes/header.php'; ?>
 <h1 class="mb-4">Add New Post</h1>
 <form method="POST" class="row g-3">
     <div class="col-12">

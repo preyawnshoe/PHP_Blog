@@ -1,7 +1,5 @@
 <?php
-if (!function_exists('is_admin_logged_in')) {
-    include_once __DIR__ . '/auth.php';
-}
+require_once __DIR__ . '/auth.php';
 $basePath = (strpos($_SERVER['SCRIPT_NAME'], '/admin/') !== false) ? '../' : '';
 $title = isset($pageTitle) ? $pageTitle : 'Blog';
 ?>

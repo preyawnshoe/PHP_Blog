@@ -1,5 +1,5 @@
 <?php
-include 'includes/db.php';
+require_once __DIR__ . '/includes/db.php';
 $id = intval($_GET['id']);
 
 $post_result = mysqli_query($conn, "SELECT * FROM posts WHERE id=$id");

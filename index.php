@@ -1,8 +1,8 @@
 <?php
-include 'includes/db.php';
-include 'includes/auth.php';
+require_once __DIR__ . '/includes/db.php';
+require_once __DIR__ . '/includes/auth.php';
 $pageTitle = 'Blog Posts';
-include 'includes/header.php';
+include __DIR__ . '/includes/header.php';
 ?>
 <h1 class="mb-4">Welcome to the Blog</h1>
 <?php

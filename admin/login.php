@@ -1,6 +1,6 @@
 <?php
-include '../includes/db.php';
-include '../includes/auth.php';
+require_once __DIR__ . '/../includes/db.php';
+require_once __DIR__ . '/../includes/auth.php';
 
 $error = '';
 $info = '';
@@ -36,8 +36,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $error = 'Username and password are required.';
         } elseif ($password !== $confirm) {
             $error = 'Passwords do not match.';
-        } elseif (strlen($username) < 3 || strlen($password) < 6) {
-            $error = 'Choose a longer username (>=3) and password (>=6).';
+        } elseif (strlen($username) < USERNAME_MIN_LENGTH || strlen($password) < PASSWORD_MIN_LENGTH) {
+            $error = 'Choose a longer username (>=' . USERNAME_MIN_LENGTH . ') and password (>=' . PASSWORD_MIN_LENGTH . ').';
         } else {
             $hash = password_hash($password, PASSWORD_DEFAULT);
             $stmt = $conn->prepare('INSERT INTO admins (username, password_hash) VALUES (?, ?)');

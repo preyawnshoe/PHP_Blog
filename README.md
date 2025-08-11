@@ -2,6 +2,11 @@
 
 A simple PHP/MySQL blog with public posts and comments, plus an admin area to manage posts. Styled with Bootstrap 5.
 
+## Live Demo
+
+- Public site: [https://preyawnshoe.gt.tc/](https://preyawnshoe.gt.tc/)
+- Admin login: [https://preyawnshoe.gt.tc/admin/login.php](https://preyawnshoe.gt.tc/admin/login.php)
+
 ## Features
 
 - Public site

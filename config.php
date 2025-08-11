@@ -7,10 +7,10 @@
  */
 
 // Database Configuration
-define('DB_HOST', 'sql213.infinityfree.com');
-define('DB_USER', 'if0_39679920');
-define('DB_PASSWORD', 'Lonewolf2112');
-define('DB_NAME', 'if0_39679920_blog_db');
+define('DB_HOST', 'localhost');
+define('DB_USER', 'root');
+define('DB_PASSWORD', '');
+define('DB_NAME', 'blog_db');
 define('DB_CHARSET', 'utf8mb4');
 
 // Database Connection Options
